@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Document Intelligence Dashboard</title>
+    <!-- Include premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="brand-logo">🧠</span>
+                <h1>DocIntel OS</h1>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2>Document Processor</h2>
+                <div class="upload-zone" id="upload-zone">
+                    <span class="upload-icon">📤</span>
+                    <p class="upload-text">Drag & drop files here or click to browse</p>
+                    <p class="upload-subtext">Supports PDF, PNG, JPG (Max 10MB)</p>
+                    <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg" style="display: none;">
+                </div>
+                <div class="upload-progress-container" id="upload-progress-container" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="upload-progress-fill"></div>
+                    </div>
+                    <span class="progress-status" id="upload-progress-status">Uploading...</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Active Context</h2>
+                <div class="active-doc-card" id="active-doc-card">
+                    <div class="empty-doc-state" id="empty-doc-state">
+                        <p>No document uploaded yet</p>
+                        <span>Upload a document to enable OCR & vector retrieval context.</span>
+                    </div>
+                    <div class="doc-meta-state" id="doc-meta-state" style="display: none;">
+                        <span class="doc-icon">📄</span>
+                        <div class="doc-details">
+                            <span class="doc-title" id="active-doc-name">document.pdf</span>
+                            <span class="doc-size" id="active-doc-size">0 KB</span>
+                            <span class="doc-uuid" id="active-doc-uuid">uuid</span>
+                        </div>
+                        <button class="remove-doc-btn" id="remove-doc-btn" title="Clear Context">×</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <span class="system-status"><span class="status-dot online"></span> System Online</span>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <header class="workspace-header">
+                <div class="header-info">
+                    <h2>Multi-Agent Playground</h2>
+                    <p>Interact with the stateful supervisor network via streaming SSE</p>
+                </div>
+            </header>
+
+            <div class="workspace-body">
+                <!-- Chat Interface -->
+                <section class="chat-section">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="system-welcome-card">
+                            <h3>Welcome to DocIntel OS</h3>
+                            <p>This is a stateful multi-agent system orchestrating specialist nodes to process documents. Here is how it works:</p>
+                            <ul class="system-flow-list">
+                                <li><strong>Supervisor:</strong> Evaluates queries and coordinates specialist worker routing.</li>
+                                <li><strong>OCR Extraction Agent:</strong> Extracts text from raw PDF/image files.</li>
+                                <li><strong>RAG Retrieval Agent:</strong> Runs semantic index search over document text chunks.</li>
+                                <li><strong>Structured Output Agent:</strong> Parses text context into a strict Pydantic JSON structure.</li>
+                            </ul>
+                            <p class="hint-text">💡 Tip: Upload a document in the sidebar, then ask questions or request structured info!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat Input -->
+                    <form class="chat-input-container" id="chat-form">
+                        <input type="text" id="chat-input" placeholder="Ask questions or type instructions..." required autocomplete="off">
+                        <button type="submit" class="send-btn" id="send-button">
+                            <span>Send</span>
+                            <span class="btn-icon">➔</span>
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Agent Trace & Structured Output Inspector -->
+                <section class="inspector-section">
+                    <div class="inspector-card">
+                        <h3>Agent Execution Trace</h3>
+                        <div class="trace-container" id="trace-container">
+                            <div class="empty-trace-state" id="empty-trace-state">
+                                <span class="trace-empty-icon">⚡</span>
+                                <p>Waiting for agent activation...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inspector-card">
+                        <h3>Structured Information Extraction</h3>
+                        <div class="structured-container" id="structured-container">
+                            <div class="empty-structured-state" id="empty-structured-state">
+                                <span class="struct-empty-icon">📊</span>
+                                <p>No structured data extracted yet</p>
+                                <span>Instruct the agent to format, parse, or extract data to see the structured output here.</span>
+                            </div>
+                            <div class="structured-output-display" id="structured-output-display" style="display: none;">
+                                <div class="metadata-grid" id="structured-metadata-grid"></div>
+                                <div class="structured-bullets-section">
+                                    <h4>Key Takeaways</h4>
+                                    <ul class="bullets-list" id="structured-bullets"></ul>
+                                </div>
+                                <div class="json-inspector">
+                                    <h4>Raw JSON Output</h4>
+                                    <pre><code id="structured-json-raw"></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
