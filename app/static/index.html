@@ -15,14 +15,14 @@
         <!-- Sidebar Section -->
         <aside class="sidebar">
             <div class="brand">
-                <span class="brand-logo">🧠</span>
+                <span class="brand-logo"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #818cf8; vertical-align: middle;"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" /><path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24" /></svg></span>
                 <h1>DocIntel OS</h1>
             </div>
             
             <div class="sidebar-section">
                 <h2>Document Processor</h2>
                 <div class="upload-zone" id="upload-zone">
-                    <span class="upload-icon">📤</span>
+                    <span class="upload-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #6366f1; margin: 0 auto; display: block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg></span>
                     <p class="upload-text">Drag & drop files here or click to browse</p>
                     <p class="upload-subtext">Supports PDF, PNG, JPG (Max 10MB)</p>
                     <input type="file" id="file-input" accept=".pdf,.png,.jpg,.jpeg" style="display: none;">
@@ -43,7 +43,7 @@
                         <span>Upload a document to enable OCR & vector retrieval context.</span>
                     </div>
                     <div class="doc-meta-state" id="doc-meta-state" style="display: none;">
-                        <span class="doc-icon">📄</span>
+                        <span class="doc-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #94a3b8; vertical-align: middle;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
                         <div class="doc-details">
                             <span class="doc-title" id="active-doc-name">document.pdf</span>
                             <span class="doc-size" id="active-doc-size">0 KB</span>
@@ -81,7 +81,7 @@
                                 <li><strong>RAG Retrieval Agent:</strong> Runs semantic index search over document text chunks.</li>
                                 <li><strong>Structured Output Agent:</strong> Parses text context into a strict Pydantic JSON structure.</li>
                             </ul>
-                            <p class="hint-text">💡 Tip: Upload a document in the sidebar, then ask questions or request structured info!</p>
+                            <p class="hint-text"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #eab308; display: inline-block; vertical-align: text-top; margin-right: 4px;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5.5 5.5 0 0 0 12.5 2.5C9.5 2.5 7 5 7 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>Tip: Upload a document in the sidebar, then ask questions or request structured info!</p>
                         </div>
                     </div>
                     
@@ -90,7 +90,7 @@
                         <input type="text" id="chat-input" placeholder="Ask questions or type instructions..." required autocomplete="off">
                         <button type="submit" class="send-btn" id="send-button">
                             <span>Send</span>
-                            <span class="btn-icon">➔</span>
+                            <span class="btn-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                         </button>
                     </form>
                 </section>
@@ -101,7 +101,7 @@
                         <h3>Agent Execution Trace</h3>
                         <div class="trace-container" id="trace-container">
                             <div class="empty-trace-state" id="empty-trace-state">
-                                <span class="trace-empty-icon">⚡</span>
+                                <span class="trace-empty-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a855f7; margin: 0 auto; display: block;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
                                 <p>Waiting for agent activation...</p>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                         <h3>Structured Information Extraction</h3>
                         <div class="structured-container" id="structured-container">
                             <div class="empty-structured-state" id="empty-structured-state">
-                                <span class="struct-empty-icon">📊</span>
+                                <span class="struct-empty-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #10b981; margin: 0 auto; display: block;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
                                 <p>No structured data extracted yet</p>
                                 <span>Instruct the agent to format, parse, or extract data to see the structured output here.</span>
                             </div>
