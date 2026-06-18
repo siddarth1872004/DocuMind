@@ -1,6 +1,6 @@
-# AgenticDoc
+# DocuMind-AI: Document Intelligence Platform
 
-AgenticDoc is a document intelligence platform built with FastAPI, LangChain, LangGraph, and local FAISS vector search. It supports PDF/image upload, OCR extraction, semantic retrieval, and structured JSON output via a multi-agent workflow.
+DocuMind-AI is a document intelligence platform built with FastAPI, LangChain, LangGraph, and local FAISS vector search. It supports PDF/image upload, OCR extraction, semantic retrieval, and structured JSON output via a multi-agent workflow.
 
 ## Features
 
