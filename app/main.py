@@ -40,11 +40,14 @@ def create_app() -> FastAPI:
     )
 
     # Configure secure CORS settings
-    # In a production context, replace "*" with trusted domains
+    # In a production context, replace "*" with trusted domains.
+    # allow_credentials is intentionally False: this API uses no cookies/sessions,
+    # and combining a wildcard origin with allow_credentials=True would let any
+    # origin make credentialed requests.
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
-        allow_credentials=True,
+        allow_credentials=False,
         allow_methods=["GET", "POST", "OPTIONS"],
         allow_headers=["*"],
     )
